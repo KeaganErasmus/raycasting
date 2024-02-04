@@ -100,11 +100,8 @@ async fn main() {
             match pt {
                 Some(pos) => {
                     draw_circle(pos.x, pos.y, 5.0, RED);
-                    println!("Intersect")
                 }
-                _ => {
-                    println!("No intersect");
-                }
+                _ => {}
             }
         }
 
