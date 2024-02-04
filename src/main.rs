@@ -19,9 +19,9 @@ struct Ray {
 
 impl Ray {
     pub fn look_at(&mut self, x: f32, y: f32) {
-        self.dir.x = x - self.position.x;
-        self.dir.y = y - self.position.y;
-        // let _ = self.dir.normalize();
+        self.dir.x  = x - self.position.x;
+        self.dir.y  = y - self.position.y;
+        self.dir    = self.dir.normalize();
     }
 
     pub fn draw(&mut self) {
@@ -78,7 +78,7 @@ impl Particle {
 #[macroquad::main("BasicShapes")]
 async fn main() {
     let mut walls: Vec<Boundry> = Vec::new();
-    for i in 0..5{
+    for _ in 0..5{
         walls.push(Boundry {
             a: Vec2::new(300., 100.),
             b: Vec2::new(300., 300.),
